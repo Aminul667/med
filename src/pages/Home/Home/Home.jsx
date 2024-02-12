@@ -16,7 +16,6 @@ const Home = () => {
         </p>
         <button className="text-cyan-500 text-3xl px-4 py-2 border rounded-md hover:bg-cyan-200 absolute right-4">Get Started</button>
       </div>
-      {/* <img src={banner} alt="" /> */}
     </div>
   );
 };
