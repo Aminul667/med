@@ -120,10 +120,7 @@ const AddMedication = () => {
               placeholder="Last Name"
               className="input-section"
             /> */}
-            <select 
-              {...register("sex", {required: true})}
-              name="sex"
-            >
+            <select {...register("sex", { required: true })} name="sex">
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>
@@ -134,19 +131,50 @@ const AddMedication = () => {
           </div>
         </div>
 
-        {/* photo url */}
-        <div className="">
-          <label className="label">
-            <span className="">Photo Url</span>
-          </label>
-          <input
-            type="text"
-            {...register("photoUrl")}
-            name="photoUrl"
-            // placeholder="Name"
-            className="input-section"
-          />
-          {/* {errors.photoUrl && <span className="error-message">Photo is required</span>} */}
+        {/* Medication Information */}
+        <div>
+          <div className="flex gap-5">
+            <div className="">
+              <label className="label">
+                <span className="">Medication</span>
+              </label>
+              <input
+                type="text"
+                {...register("medication")}
+                name="medication"
+                // placeholder="Name"
+                className="input-section"
+              />
+              {/* {errors.photoUrl && <span className="error-message">Photo is required</span>} */}
+            </div>
+            <div className="">
+              <label className="label">
+                <span className="">Dosage</span>
+              </label>
+              <input
+                type="text"
+                {...register("dosage")}
+                name="dosage"
+                // placeholder="Name"
+                className="input-section"
+              />
+              {/* {errors.photoUrl && <span className="error-message">Photo is required</span>} */}
+            </div>
+            <div className="">
+              <label className="label">
+                <span className="">Duration</span>
+              </label>
+              <input
+                type="text"
+                {...register("duration")}
+                name="duration"
+                // placeholder="Name"
+                className="input-section"
+              />
+              {/* {errors.photoUrl && <span className="error-message">Photo is required</span>} */}
+            </div>
+          </div>
+          <button className="btn btn-primary m-5">Add More</button>
         </div>
 
         {/* email */}
