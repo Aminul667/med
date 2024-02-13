@@ -28,7 +28,7 @@ const AddMedication = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
+    console.log(data);
   };
 
   return (
@@ -58,21 +58,36 @@ const AddMedication = () => {
 
     //   <div className="body"> {JSON.stringify(inputs)} </div>
     // </div>
-    <div>
+    <div className="m-5">
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         {/* name */}
-        <div className="">
-          <label className="label">
-            <span className="">Name</span>
-          </label>
-          <input
-            type="text"
-            {...register("name", { required: true })}
-            name="name"
-            // placeholder="Name"
-            className="input-section"
-          />
-          {errors.name && <p className="error-message">Name is required</p>}
+        <div className="flex gap-4">
+          <div className="">
+            <label className="label">
+              <span className="">Patient's Name</span>
+            </label>
+            <input
+              type="text"
+              {...register("name", { required: true })}
+              name="name"
+              placeholder="First Name"
+              className="input-section"
+            />
+            {errors.name && <p className="error-message">First Name is required</p>}
+          </div>
+          <div className="">
+            <label className="label">
+              <span className="">Patient's Name</span>
+            </label>
+            <input
+              type="text"
+              {...register("name", { required: true })}
+              name="name"
+              placeholder="Last Name"
+              className="input-section"
+            />
+            {errors.name && <p className="error-message">Last Name is required</p>}
+          </div>
         </div>
 
         {/* photo url */}
