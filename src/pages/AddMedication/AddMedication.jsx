@@ -68,12 +68,14 @@ const AddMedication = () => {
             </label>
             <input
               type="text"
-              {...register("name", { required: true })}
-              name="name"
+              {...register("firstName", { required: true })}
+              name="firstName"
               placeholder="First Name"
               className="input-section"
             />
-            {errors.name && <p className="error-message">First Name is required</p>}
+            {errors.firstName && (
+              <p className="error-message">First Name is required</p>
+            )}
           </div>
           <div className="">
             <label className="label">
@@ -81,12 +83,54 @@ const AddMedication = () => {
             </label>
             <input
               type="text"
+              {...register("lastName", { required: true })}
+              name="lastName"
+              placeholder="Last Name"
+              className="input-section"
+            />
+            {errors.lastName && (
+              <p className="error-message">Last Name is required</p>
+            )}
+          </div>
+        </div>
+
+        {/* age and sex */}
+        <div className="flex gap-4">
+          <div className="">
+            <label className="label">
+              <span className="">Patient's age</span>
+            </label>
+            <input
+              type="number"
+              {...register("age", { required: true })}
+              name="age"
+              placeholder="Age"
+              className="input-section"
+            />
+            {errors.age && <p className="error-message">Age is required</p>}
+          </div>
+          <div className="">
+            <label className="label">
+              <span className="">Patient's Sex</span>
+            </label>
+            {/* <input
+              type="text"
               {...register("name", { required: true })}
               name="name"
               placeholder="Last Name"
               className="input-section"
-            />
-            {errors.name && <p className="error-message">Last Name is required</p>}
+            /> */}
+            <select 
+              {...register("sex", {required: true})}
+              name="sex"
+            >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            {errors.sex && (
+              <p className="error-message">Please select the sex</p>
+            )}
           </div>
         </div>
 
