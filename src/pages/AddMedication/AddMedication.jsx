@@ -24,7 +24,7 @@ const AddMedication = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-md mx-auto p-6 bg-white shadow-md rounded-md"
+      className="max-w-[50%] mx-auto p-6 bg-white shadow-md rounded-md mb-5"
     >
       <div className="mb-4">
         <label
@@ -136,19 +136,25 @@ const AddMedication = () => {
           </button>
         </div>
       ))}
-      <button
-        type="button"
-        onClick={() => appendMedication({ name: "", dosage: "", duration: "" })}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Add Medication
-      </button>
-      <button
-        type="submit"
-        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2"
-      >
-        Submit
-      </button>
+      <div className="mb-2">
+        <button
+          type="button"
+          onClick={() =>
+            appendMedication({ name: "", dosage: "", duration: "" })
+          }
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+        >
+          Add Medication
+        </button>
+      </div>
+      <div>
+        <button
+          type="submit"
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full"
+        >
+          Submit
+        </button>
+      </div>
     </form>
   );
 };
