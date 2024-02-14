@@ -73,7 +73,7 @@ const AddMedication = () => {
       </div>
       {medicationFields.map((medicationField, index) => (
         <div key={medicationField.id} className="mb-4 flex gap-5">
-          <div>
+          <div className="flex-grow">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor={`medications[${index}].name`}
@@ -94,7 +94,7 @@ const AddMedication = () => {
             )}
           </div>
 
-          <div>
+          <div className="flex-grow">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor={`medications[${index}].dosage`}
@@ -115,7 +115,7 @@ const AddMedication = () => {
             )}
           </div>
 
-          <div>
+          <div className="flex-grow">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor={`medications[${index}].duration`}
