@@ -28,15 +28,43 @@ const AddMedication = () => {
     >
       <div className="mb-4">
         <label
-          htmlFor="additionalField"
+          htmlFor="firstName"
           className="block text-gray-700 text-sm font-bold mb-2"
         >
-          Additional Field:
+          First Name:
         </label>
         <input
           type="text"
-          id="additionalField"
-          {...register("additionalField")}
+          id="firstName"
+          {...register("firstName")}
+          className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          htmlFor="lastName"
+          className="block text-gray-700 text-sm font-bold mb-2"
+        >
+          Last Name:
+        </label>
+        <input
+          type="text"
+          id="lastName"
+          {...register("lastName")}
+          className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          htmlFor="age"
+          className="block text-gray-700 text-sm font-bold mb-2"
+        >
+          Age:
+        </label>
+        <input
+          type="number"
+          id="age"
+          {...register("age")}
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
