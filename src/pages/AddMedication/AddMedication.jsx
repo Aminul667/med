@@ -5,9 +5,9 @@ const AddMedication = () => {
     register,
     handleSubmit,
     formState: { errors },
-    control,
+    control
   } = useForm();
-  const { fields, append } = useFieldArray({
+  const { fields, append, remove } = useFieldArray({
     control: control,
     name: "inputFields",
   });
@@ -37,10 +37,10 @@ const AddMedication = () => {
         />
       </div>
       {fields.map((field, index) => (
-        <div key={field.id} className="mb-4">
+        <div key={field.id} className="mb-4 flex items-center">
           <label
             htmlFor={`firstName${index}`}
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-gray-700 text-sm font-bold mb-2 mr-2"
           >
             First Name:
           </label>
@@ -49,13 +49,20 @@ const AddMedication = () => {
             {...register(`inputFields.${index}.firstName`, {
               required: "First Name is required",
             })}
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mr-2"
           />
           {errors?.inputFields?.[index]?.firstName && (
             <p className="text-red-500 text-xs mt-1">
               {errors.inputFields[index].firstName.message}
             </p>
           )}
+          <button
+            type="button"
+            onClick={() => remove(index)}
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Delete
+          </button>
         </div>
       ))}
       <button
