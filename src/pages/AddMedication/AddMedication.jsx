@@ -26,6 +26,20 @@ const AddMedication = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="max-w-md mx-auto p-6 bg-white shadow-md rounded-md"
     >
+      <div className="mb-4">
+        <label
+          htmlFor="additionalField"
+          className="block text-gray-700 text-sm font-bold mb-2"
+        >
+          Additional Field:
+        </label>
+        <input
+          type="text"
+          id="additionalField"
+          {...register("additionalField")}
+          className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
       {medicationFields.map((medicationField, index) => (
         <div key={medicationField.id} className="mb-4">
           <label
