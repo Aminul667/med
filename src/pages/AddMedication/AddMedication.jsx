@@ -6,7 +6,9 @@ const AddMedication = () => {
     handleSubmit,
     formState: { errors },
     control,
+    // reset,
   } = useForm();
+
   const {
     fields: medicationFields,
     append: appendMedication,
@@ -18,7 +20,8 @@ const AddMedication = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    // Here you can handle form submission, like sending data to a server
+    alert("Your Form has been submitted");
+    // reset();
   };
 
   return (
@@ -69,63 +72,69 @@ const AddMedication = () => {
         />
       </div>
       {medicationFields.map((medicationField, index) => (
-        <div key={medicationField.id} className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor={`medications[${index}].name`}
-          >
-            Medication Name:
-          </label>
-          <input
-            type="text"
-            {...register(`medications[${index}].name`, {
-              required: "Medication Name is required",
-            })}
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2"
-          />
-          {errors?.medications?.[index]?.name && (
-            <p className="text-red-500 text-xs mt-1">
-              {errors.medications[index].name.message}
-            </p>
-          )}
+        <div key={medicationField.id} className="mb-4 flex gap-5">
+          <div>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor={`medications[${index}].name`}
+            >
+              Medication Name:
+            </label>
+            <input
+              type="text"
+              {...register(`medications[${index}].name`, {
+                required: "Medication Name is required",
+              })}
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2"
+            />
+            {errors?.medications?.[index]?.name && (
+              <p className="text-red-500 text-xs mt-1">
+                {errors.medications[index].name.message}
+              </p>
+            )}
+          </div>
 
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor={`medications[${index}].dosage`}
-          >
-            Dosage:
-          </label>
-          <input
-            type="text"
-            {...register(`medications[${index}].dosage`, {
-              required: "Dosage is required",
-            })}
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2"
-          />
-          {errors?.medications?.[index]?.dosage && (
-            <p className="text-red-500 text-xs mt-1">
-              {errors.medications[index].dosage.message}
-            </p>
-          )}
+          <div>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor={`medications[${index}].dosage`}
+            >
+              Dosage:
+            </label>
+            <input
+              type="text"
+              {...register(`medications[${index}].dosage`, {
+                required: "Dosage is required",
+              })}
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2"
+            />
+            {errors?.medications?.[index]?.dosage && (
+              <p className="text-red-500 text-xs mt-1">
+                {errors.medications[index].dosage.message}
+              </p>
+            )}
+          </div>
 
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor={`medications[${index}].duration`}
-          >
-            Duration:
-          </label>
-          <input
-            type="text"
-            {...register(`medications[${index}].duration`, {
-              required: "Duration is required",
-            })}
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2"
-          />
-          {errors?.medications?.[index]?.duration && (
-            <p className="text-red-500 text-xs mt-1">
-              {errors.medications[index].duration.message}
-            </p>
-          )}
+          <div>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor={`medications[${index}].duration`}
+            >
+              Duration:
+            </label>
+            <input
+              type="text"
+              {...register(`medications[${index}].duration`, {
+                required: "Duration is required",
+              })}
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2"
+            />
+            {errors?.medications?.[index]?.duration && (
+              <p className="text-red-500 text-xs mt-1">
+                {errors.medications[index].duration.message}
+              </p>
+            )}
+          </div>
 
           <button
             type="button"
