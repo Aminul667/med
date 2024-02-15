@@ -61,10 +61,15 @@ const AddMedication = () => {
           type="text"
           id="lastName"
           {...register("lastName", {
-            required: "First Name is required",
+            required: "Last Name is required",
           })}
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
+        {errors?.lastName && (
+          <p className="text-red-500 text-xs mt-1">
+            {errors.firstName.message}
+          </p>
+        )}
       </div>
       <div className="mb-4">
         <label
@@ -77,10 +82,13 @@ const AddMedication = () => {
           type="number"
           id="age"
           {...register("age", {
-            required: "First Name is required",
+            required: "Age is required",
           })}
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
+        {errors?.age && (
+          <p className="text-red-500 text-xs mt-1">{errors.age.message}</p>
+        )}
       </div>
 
       {/* text area */}
