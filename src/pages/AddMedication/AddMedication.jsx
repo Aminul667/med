@@ -39,9 +39,16 @@ const AddMedication = () => {
         <input
           type="text"
           id="firstName"
-          {...register("firstName")}
+          {...register("firstName", {
+            required: "First Name is required",
+          })}
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
+        {errors?.firstName && (
+          <p className="text-red-500 text-xs mt-1">
+            {errors.firstName.message}
+          </p>
+        )}
       </div>
       <div className="mb-4">
         <label
@@ -53,7 +60,9 @@ const AddMedication = () => {
         <input
           type="text"
           id="lastName"
-          {...register("lastName")}
+          {...register("lastName", {
+            required: "First Name is required",
+          })}
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
@@ -67,10 +76,30 @@ const AddMedication = () => {
         <input
           type="number"
           id="age"
-          {...register("age")}
+          {...register("age", {
+            required: "First Name is required",
+          })}
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
+
+      {/* text area */}
+      <div className="mb-4">
+        <label
+          htmlFor="symptoms"
+          className="block text-gray-700 text-sm font-bold mb-2"
+        >
+          Symptoms:
+        </label>
+        <input
+          type="textarea"
+          id="symptoms"
+          {...register("symptoms")}
+          className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+
+      {/* medication fields */}
       {medicationFields.map((medicationField, index) => (
         <div key={medicationField.id} className="mb-4 flex gap-5">
           <div className="flex-grow">
