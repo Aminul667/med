@@ -108,6 +108,23 @@ const AddMedication = () => {
         />
       </div>
 
+      {/* Diagnosis */}
+      <div className="mb-4">
+        <label
+          htmlFor="symptoms"
+          className="block text-gray-700 text-sm font-bold mb-2"
+        >
+          Diagnosis:
+        </label>
+        <input
+          type="text"
+          id="diagnosis"
+          rows="10"
+          {...register("diagnosis")}
+          className="appearance-none border rounded w-full px-3 py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+
       {/* medication fields */}
       {medicationFields.map((medicationField, index) => (
         <div key={medicationField.id} className="mb-4 flex gap-5">
