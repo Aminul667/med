@@ -29,6 +29,9 @@ const NavBar = () => {
               <NavLink to="/medication">Medication</NavLink>
             </li>
             <li>
+              <NavLink to="/profile">Profile</NavLink>
+            </li>
+            <li>
               <a>Parent</a>
               <ul className="p-2">
                 <li>
@@ -52,6 +55,9 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-1">
           <li>
             <NavLink to="/medication">Medication</NavLink>
+          </li>
+          <li>
+            <NavLink to="/profile">Profile</NavLink>
           </li>
           <li>
             <details>
