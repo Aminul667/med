@@ -25,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile></Profile>,
+        loader: () => fetch("prescriptionData.json"),
       },
     ],
   },

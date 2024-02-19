@@ -1,10 +1,28 @@
+import { useLoaderData } from "react-router-dom";
 
 const Profile = () => {
-    return (
-        <div>
-            <h2 className="text-5xl bg-orange-400">This is profile component</h2>
-        </div>
-    );
+  const prescriptionData = useLoaderData();
+  console.log(prescriptionData);
+
+  return (
+    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-gradient-to-br from-blue-500 to-purple-500 bg-opacity-75 backdrop-blur-md backdrop-filter">
+      <div className="px-6 py-4">
+        <div className="font-semibold text-xl mb-2 text-white">Card Title</div>
+        <p className="text-gray-200 text-base">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
+          quam sed massa sollicitudin varius.
+        </p>
+      </div>
+      <div className="px-6 py-4">
+        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+          #tag1
+        </span>
+        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+          #tag2
+        </span>
+      </div>
+    </div>
+  );
 };
 
 export default Profile;
