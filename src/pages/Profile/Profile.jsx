@@ -3,11 +3,15 @@ import Card from "./Card";
 
 const Profile = () => {
   const prescriptionData = useLoaderData();
-  console.log(prescriptionData);
+  // console.log(prescriptionData);
 
   return (
     <div className="m-5">
-      <Card></Card>
+      {
+        prescriptionData.map(prescription => (
+          <Card key={prescription.id} prescription={prescription}></Card>
+        ))
+      }
     </div>
   );
 };
